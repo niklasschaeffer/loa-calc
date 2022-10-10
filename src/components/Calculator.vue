@@ -29,12 +29,12 @@ export default {
 </script>
 
 <template>
-  <h1>Calculator</h1>
+  <h1>Inputs</h1>
 
   <div class="form-group">
     <div class="row">
       <div class="col">
-        <label for="inputBid">Bid</label>
+        <label for="inputBid">Current Bid</label>
         <input
           type="text"
           class="form-control"
@@ -43,7 +43,7 @@ export default {
         />
       </div>
       <div class="col">
-        <label for="inputMarketValue">MarketValue</label>
+        <label for="inputMarketValue">Market Value</label>
         <input
           type="text"
           class="form-control"
