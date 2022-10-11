@@ -12,7 +12,22 @@ import { RouterView } from "vue-router";
     </ul>
   </header>
   -->
+
   <RouterView />
+
+  <footer class="footer mt-auto py-3 px-5 bg-dark">
+    <font-awesome-icon
+      icon="fa-brands fa-github"
+      class="float-start"
+      style="margin-top: 5px"
+    />
+    <a
+      class="nav-link ms-4"
+      target="blank"
+      href="https://github.com/niklasschaeffer/loa-calc"
+      >Github</a
+    >
+  </footer>
 </template>
 
 <style scoped></style>
