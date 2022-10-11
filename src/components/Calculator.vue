@@ -29,7 +29,9 @@ export default {
 </script>
 
 <template>
-  <h1>Inputs</h1>
+  <h1>Market Value & Equal Share Calculator</h1>
+  <br />
+  <h2>Inputs</h2>
 
   <div class="form-group">
     <div class="row">
