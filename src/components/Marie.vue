@@ -28,7 +28,7 @@ export default {
     <div class="form-group">
       <div class="row">
         <div class="col">
-          <label for="inputMarketValue">Item Market Value</label>
+          <label for="inputMarketValue">Market Value</label>
           <input
             v-model="inputMarketValue"
             type="number"
