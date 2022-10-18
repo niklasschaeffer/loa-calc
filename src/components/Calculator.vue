@@ -38,7 +38,7 @@ export default {
       <div class="col">
         <label for="inputBid">Current Bid</label>
         <input
-          type="text"
+          type="number"
           class="form-control"
           id="inputBid"
           v-model="inputBid"
@@ -47,7 +47,7 @@ export default {
       <div class="col">
         <label for="inputMarketValue">Market Value</label>
         <input
-          type="text"
+          type="number"
           class="form-control"
           id="inputMarketValue"
           v-model="inputMarketValue"

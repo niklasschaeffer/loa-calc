@@ -3,15 +3,16 @@ import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <!--
   <header>
     <ul class="nav justify-content-center">
       <li class="nav-item">
         <RouterLink class="nav-link" to="/">Calculator</RouterLink>
       </li>
+      <li class="nav-item">
+        <RouterLink class="nav-link" to="/marie">Marie</RouterLink>
+      </li>
     </ul>
   </header>
-  -->
 
   <RouterView />
 
