@@ -4,19 +4,19 @@ import { RouterView } from "vue-router";
 
 <template>
   <header>
-    <ul class="nav justify-content-center">
+    <ul class="nav bg-dark justify-content-center">
       <li class="nav-item">
-        <RouterLink class="nav-link" to="/">Calculator</RouterLink>
+        <RouterLink class="nav-link text-light" to="/">Calculator</RouterLink>
       </li>
       <li class="nav-item">
-        <RouterLink class="nav-link" to="/marie">Marie</RouterLink>
+        <RouterLink class="nav-link text-light" to="/marie">Marie</RouterLink>
       </li>
     </ul>
   </header>
 
   <RouterView />
 
-  <footer class="footer mt-auto py-3 px-5 bg-dark">
+  <footer class="footer mt-auto py-3 px-5 bg-dark text-light">
     <font-awesome-icon
       icon="fa-brands fa-github"
       class="float-start"
