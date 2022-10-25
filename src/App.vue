@@ -11,6 +11,11 @@ import { RouterView } from "vue-router";
       <li class="nav-item">
         <RouterLink class="nav-link text-light" to="/marie">Marie</RouterLink>
       </li>
+      <li class="nav-item">
+        <RouterLink class="nav-link text-light" to="/rapport"
+          >Rapport</RouterLink
+        >
+      </li>
     </ul>
   </header>
 

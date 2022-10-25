@@ -1,6 +1,5 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-import { getFirebase } from "./firebase.js";
 import "bootstrap";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -19,7 +18,6 @@ const app = createApp(App);
 
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(createPinia());
-app.use(getFirebase());
 app.use(router);
 
 app.mount("#app");
