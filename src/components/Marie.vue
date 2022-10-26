@@ -5,7 +5,7 @@ export default {
       inputMarketValue: 0,
       inputCrystals: 0,
       inputCurrentGoldToCrystals: 0,
-      result: 0,
+      result: null,
     };
   },
   methods: {
