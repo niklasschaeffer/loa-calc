@@ -1,5 +1,35 @@
-<script setup>
-import { RouterView } from "vue-router";
+<script>
+import { router } from "@/router/index";
+import { auth } from "@/firebase/firebase";
+import { useUserStore } from "@/stores/user";
+
+export default {
+  setup() {
+    const store = useUserStore();
+    return { store };
+  },
+  methods: {
+    logout() {
+      if (auth.currentUser) {
+        auth.signOut();
+      }
+    },
+    authListener() {
+      const store = useUserStore();
+      auth.onAuthStateChanged(function (user) {
+        if (!user) {
+          router.push("/login");
+        } else {
+          store.isLoggedIn = true;
+          store.currentUser = auth.currentUser;
+        }
+      });
+    },
+  },
+  mounted() {
+    this.authListener();
+  },
+};
 </script>
 
 <template>
@@ -11,18 +41,35 @@ import { RouterView } from "vue-router";
       <li class="nav-item">
         <RouterLink class="nav-link text-light" to="/marie">Marie</RouterLink>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" v-if="this.store.isLoggedIn == true">
         <RouterLink class="nav-link text-light" to="/rapport"
           >Rapport</RouterLink
         >
       </li>
       <li class="nav-item">
-        <RouterLink class="nav-link text-light" to="/register"
+        <RouterLink
+          class="nav-link text-light"
+          to="/register"
+          v-if="this.store.isLoggedIn == false"
           >Register</RouterLink
         >
       </li>
       <li class="nav-item">
-        <RouterLink class="nav-link text-light" to="/login">Login</RouterLink>
+        <RouterLink
+          class="nav-link text-light"
+          v-if="this.store.isLoggedIn == false"
+          to="/login"
+          >Login</RouterLink
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link text-light"
+          href="#"
+          v-if="this.store.isLoggedIn == true"
+          @click="logout"
+          >Logout</a
+        >
       </li>
     </ul>
   </header>
