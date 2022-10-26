@@ -67,13 +67,13 @@ export default {
       <h1>Results</h1>
       <div class="row">
         <div class="col">
-          <div v-if="this.result > 0">
-            <p>Its worth buying on Marie's Shop.</p>
-            <p>You save a total of: {{ result }} Gold</p>
-          </div>
           <div v-if="this.result < 0">
             <p>Its not worth buying on Marie's Shop.</p>
             <p>You loose a total of: {{ result }} Gold per buy.</p>
+          </div>
+          <div v-else>
+            <p>Its worth buying on Marie's Shop.</p>
+            <p>You save a total of: {{ result }} Gold</p>
           </div>
         </div>
       </div>
