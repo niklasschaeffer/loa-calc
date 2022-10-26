@@ -37,44 +37,48 @@ export default {
 
 <template>
   <header>
-    <ul class="nav bg-dark justify-content-center">
-      <li class="nav-item">
-        <RouterLink class="nav-link text-light" to="/">Calculator</RouterLink>
-      </li>
-      <li class="nav-item">
-        <RouterLink class="nav-link text-light" to="/marie">Marie</RouterLink>
-      </li>
-      <li class="nav-item" v-if="this.store.isLoggedIn == true">
-        <RouterLink class="nav-link text-light" to="/rapport"
-          >Rapport</RouterLink
-        >
-      </li>
-      <li class="nav-item">
-        <RouterLink
-          class="nav-link text-light"
-          to="/register"
-          v-if="this.store.isLoggedIn == false"
-          >Register</RouterLink
-        >
-      </li>
-      <li class="nav-item">
-        <RouterLink
-          class="nav-link text-light"
-          v-if="this.store.isLoggedIn == false"
-          to="/login"
-          >Login</RouterLink
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link text-light"
-          href="#"
-          v-if="this.store.isLoggedIn == true"
-          @click="logout"
-          >Logout</a
-        >
-      </li>
-    </ul>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <RouterLink class="nav-link text-light" to="/">Calculator</RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink class="nav-link text-light" to="/marie">Marie</RouterLink>
+        </li>
+        <li class="nav-item" v-if="this.store.isLoggedIn == true">
+          <RouterLink class="nav-link text-light" to="/rapport"
+            >Rapport</RouterLink
+          >
+        </li>
+      </ul>
+      <ul class="navbar-nav float-right">
+        <li class="nav-item">
+          <RouterLink
+            class="nav-link text-light"
+            to="/register"
+            v-if="this.store.isLoggedIn == false"
+            >Register</RouterLink
+          >
+        </li>
+        <li class="nav-item">
+          <RouterLink
+            class="nav-link text-light"
+            v-if="this.store.isLoggedIn == false"
+            to="/login"
+            >Login</RouterLink
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-light"
+            href="#"
+            v-if="this.store.isLoggedIn == true"
+            @click="logout"
+            >Logout</a
+          >
+        </li>
+      </ul>
+    </nav>
   </header>
 
   <RouterView />

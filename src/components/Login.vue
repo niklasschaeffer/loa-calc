@@ -1,23 +1,42 @@
 <template>
   <form @submit.prevent="login">
-    <h2>Log in</h2>
-    <div class="form-group">
-      <input
-        type="email"
-        placeholder="Email"
-        class="form-control"
-        required
-        v-model="email"
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        class="form-control"
-        required
-        v-model="password"
-      />
+    <div class="card bg-dark">
+      <div class="card-header text-center">
+        <h2 class="text-light">Log in</h2>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-6">
+              <label>Email</label>
+              <input
+                type="email"
+                placeholder="Email"
+                class="form-control"
+                required
+                v-model="email"
+              />
+            </div>
+            <div class="col-6">
+              <label class="">Password</label>
+              <input
+                type="password"
+                placeholder="Password"
+                class="form-control"
+                required
+                v-model="password"
+              />
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row align-items-center">
+          <div class="col">
+            <input type="submit" class="btn btn-primary" value="Login" />
+          </div>
+        </div>
+      </div>
     </div>
-    <button class="btn btn-primary">Log in</button>
   </form>
 </template>
 
