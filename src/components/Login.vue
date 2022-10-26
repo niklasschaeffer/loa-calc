@@ -25,6 +25,7 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/firebase/firebase";
 import { router } from "@/router/index";
+import { useUserStore } from "@/stores/user";
 
 export default {
   data() {
@@ -35,10 +36,11 @@ export default {
   },
   methods: {
     login() {
+      const store = useUserStore();
       signInWithEmailAndPassword(auth, this.email, this.password).then(() => {
         // emit event for member area
-        this.$root.isLoggedIn = true;
-        this.$root.currentUser = auth.currentUser;
+        store.isLoggedIn = true;
+        store.currentUser = auth.currentUser;
         router.push("/");
       });
     },

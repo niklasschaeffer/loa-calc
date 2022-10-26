@@ -10,8 +10,11 @@ export default {
   },
   methods: {
     logout() {
+      const store = useUserStore();
       if (auth.currentUser) {
         auth.signOut();
+        store.isLoggedIn = false;
+        store.currentUser = "";
       }
     },
     authListener() {
