@@ -16,6 +16,14 @@ import { RouterView } from "vue-router";
           >Rapport</RouterLink
         >
       </li>
+      <li class="nav-item">
+        <RouterLink class="nav-link text-light" to="/register"
+          >Register</RouterLink
+        >
+      </li>
+      <li class="nav-item">
+        <RouterLink class="nav-link text-light" to="/login">Login</RouterLink>
+      </li>
     </ul>
   </header>
 
