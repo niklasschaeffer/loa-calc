@@ -53,13 +53,15 @@ export default {
       password: "",
     };
   },
+  setup() {
+    const store = useUserStore();
+    if (store.isLoggedIn) {
+      router.push("/");
+    }
+  },
   methods: {
     login() {
-      const store = useUserStore();
       signInWithEmailAndPassword(auth, this.email, this.password).then(() => {
-        // emit event for member area
-        store.isLoggedIn = true;
-        store.currentUser = auth.currentUser;
         router.push("/");
       });
     },

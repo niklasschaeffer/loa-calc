@@ -1,5 +1,4 @@
 <script>
-import { router } from "@/router/index";
 import { auth } from "@/firebase/firebase";
 import { useUserStore } from "@/stores/user";
 
@@ -22,20 +21,6 @@ export default {
         store.currentUser = "";
       }
     },
-    authListener() {
-      const store = useUserStore();
-      auth.onAuthStateChanged(function (user) {
-        if (!user) {
-          router.push("/login");
-        } else {
-          store.isLoggedIn = true;
-          store.currentUser = auth.currentUser;
-        }
-      });
-    },
-  },
-  mounted() {
-    this.authListener();
   },
 };
 </script>

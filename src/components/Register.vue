@@ -1,6 +1,7 @@
 <script>
 import { auth } from "@/firebase/firebase";
 import { createUserWithEmailAndPassword } from "@firebase/auth";
+import { router } from "@/router/index";
 
 export default {
   data() {
@@ -10,6 +11,7 @@ export default {
         password: "",
         email: "",
       },
+      error: "",
     };
   },
 
@@ -20,11 +22,11 @@ export default {
         this.credentials.email,
         this.credentials.password
       )
-        .then((credential) => {
-          console.log(credential);
+        .then(() => {
+          router.push("/");
         })
         .catch((error) => {
-          console.log(error);
+          this.error = error.message;
         });
     },
   },
@@ -38,6 +40,9 @@ export default {
         <h2 class="text-light">Register Form</h2>
       </div>
       <div class="card-body">
+        <div v-if="this.error" class="alert alert-danger">
+          {{ this.error }}
+        </div>
         <div class="form-group">
           <div class="row">
             <div class="col">
