@@ -13,37 +13,37 @@ const router = createRouter({
     {
       path: "/:pathMatch(.*)*",
       name: "PageNotFound - 404",
-      component: PageNotFoundView,
+      component: () => PageNotFoundView,
     },
     {
       path: "/",
       name: "home",
-      component: HomeView,
+      component: () => HomeView,
     },
     {
       path: "/share",
       name: "share",
-      component: ShareView,
+      component: () => ShareView,
     },
     {
       path: "/marie",
       name: "marie",
-      component: MarieView,
+      component: () => MarieView,
     },
     {
       path: "/rapport",
       name: "rapport",
-      component: RapportView,
+      component: () => RapportView,
     },
     {
       path: "/register",
       name: "register",
-      component: RegisterView,
+      component: () => RegisterView,
     },
     {
       path: "/login",
       name: "login",
-      component: LoginView,
+      component: () => LoginView,
     },
   ],
 });
