@@ -32,7 +32,7 @@
         <br />
         <div class="row align-items-center">
           <div class="col">
-            <input type="submit" class="btn btn-primary" value="Login" />
+            <input type="submit" class="btn btn-success" value="Login" />
           </div>
         </div>
       </div>

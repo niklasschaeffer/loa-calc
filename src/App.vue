@@ -4,6 +4,11 @@ import { auth } from "@/firebase/firebase";
 import { useUserStore } from "@/stores/user";
 
 export default {
+  data() {
+    return {
+      enabled: false,
+    };
+  },
   setup() {
     const store = useUserStore();
     return { store };
@@ -40,12 +45,18 @@ export default {
     <nav class="navbar navbar-expand navbar-dark bg-dark">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <RouterLink class="nav-link text-light" to="/">Calculator</RouterLink>
+          <RouterLink class="nav-link text-light" to="/">Home</RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink class="nav-link text-light" to="/share">Share</RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink class="nav-link text-light" to="/marie">Marie</RouterLink>
         </li>
-        <li class="nav-item" v-if="this.store.isLoggedIn == true">
+        <li
+          class="nav-item"
+          v-if="this.store.isLoggedIn == true && this.enabled == true"
+        >
           <RouterLink class="nav-link text-light" to="/rapport"
             >Rapport</RouterLink
           >

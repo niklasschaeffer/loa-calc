@@ -80,7 +80,7 @@ export default {
         <br />
         <div class="row align-items-center">
           <div class="col">
-            <input type="submit" class="btn btn-primary" value="Sign Up" />
+            <input type="submit" class="btn btn-success" value="Sign Up" />
           </div>
         </div>
       </div>

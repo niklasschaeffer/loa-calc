@@ -1,12 +1,12 @@
 <script setup>
-import Rapport from "../components/Rapport.vue";
+import PageNotFound from "../components/system/404.vue";
 </script>
 
 <template>
   <main class="container pt-4">
     <div class="row justify-content-center">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-        <Rapport />
+        <PageNotFound />
       </div>
     </div>
   </main>

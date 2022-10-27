@@ -57,7 +57,7 @@ export default {
     <br />
     <div class="row align-items-center">
       <div class="col">
-        <button type="button" class="btn btn-primary" @click="calculateNumbers">
+        <button type="button" class="btn btn-success" @click="calculateNumbers">
           Calculate
         </button>
       </div>

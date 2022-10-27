@@ -1,17 +1,29 @@
 import { createRouter, createWebHistory } from "vue-router";
-import CalculatorView from "../views/CalculatorView.vue";
+import ShareView from "../views/ShareView.vue";
 import MarieView from "../views/MarieView.vue";
 import RapportView from "../views/RapportView.vue";
 import RegisterView from "../views/RegisterView.vue";
 import LoginView from "../views/LoginView.vue";
+import HomeView from "../views/HomeView.vue";
+import PageNotFoundView from "../views/PageNotFoundView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: "/:pathMatch(.*)*",
+      name: "PageNotFound - 404",
+      component: PageNotFoundView,
+    },
+    {
       path: "/",
-      name: "calculator",
-      component: CalculatorView,
+      name: "home",
+      component: HomeView,
+    },
+    {
+      path: "/share",
+      name: "share",
+      component: ShareView,
     },
     {
       path: "/marie",
