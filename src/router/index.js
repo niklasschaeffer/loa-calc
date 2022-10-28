@@ -15,6 +15,7 @@ const router = createRouter({
       path: "/:pathMatch(.*)*",
       name: "PageNotFound - 404",
       component: PageNotFoundView,
+      meta: { requiresAuth: false },
     },
     {
       path: "/",
