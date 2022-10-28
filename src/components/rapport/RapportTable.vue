@@ -33,7 +33,7 @@ export default {
         >
           <td>{{ counter++ }}</td>
           <td>{{ npc.name }}</td>
-          <td>{{ npc.continent + ": " + npc.location }}</td>
+          <td>{{ npc.location }}</td>
           <td>{{ npc.rapport_per_day }}</td>
           <td>{{ npc.max_rapport }}</td>
           <td>
