@@ -19,7 +19,7 @@ export default {
         <tr>
           <th>#</th>
           <th>Name</th>
-          <th>Continent: Location</th>
+          <th>Location</th>
           <th>Rapport per Day</th>
           <th>Maximum Rapport</th>
           <th>Days Required</th>
