@@ -2,13 +2,13 @@
   <form @submit.prevent="login">
     <div class="card bg-dark">
       <div class="card-header text-center">
-        <h2 class="text-light">Log in</h2>
+        <h2 class="text-light mb-0">Log in</h2>
       </div>
       <div class="card-body">
         <div class="form-group">
           <div class="row">
-            <div class="col-6">
-              <label>Email</label>
+            <div class="col-12">
+              <label for="email">Email</label>
               <input
                 type="email"
                 placeholder="Email"
@@ -17,8 +17,8 @@
                 v-model="email"
               />
             </div>
-            <div class="col-6">
-              <label class="">Password</label>
+            <div class="col-12">
+              <label for="password">Password</label>
               <input
                 type="password"
                 placeholder="Password"
@@ -31,7 +31,7 @@
         </div>
         <br />
         <div class="row align-items-center">
-          <div class="col">
+          <div class="col d-grid gap-2">
             <input type="submit" class="btn btn-success" value="Login" />
           </div>
         </div>

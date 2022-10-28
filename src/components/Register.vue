@@ -37,7 +37,7 @@ export default {
   <form @submit.prevent="signUp">
     <div class="card bg-dark">
       <div class="card-header text-center">
-        <h2 class="text-light">Register Form</h2>
+        <h2 class="text-light mb-0">Registration</h2>
       </div>
       <div class="card-body">
         <div v-if="this.error" class="alert alert-danger">
@@ -84,9 +84,21 @@ export default {
 
         <br />
         <div class="row align-items-center">
-          <div class="col">
+          <div class="col d-grid gap-2">
             <input type="submit" class="btn btn-success" value="Sign Up" />
           </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="alert alert-danger mb-0">
+          <font-awesome-icon
+            icon="fa-solid fa-info"
+            class="d-block text-center m-auto"
+          ></font-awesome-icon>
+          <span class="d-block m-auto text-center mt-3"
+            >We value your private data ! Nothing will be shared at any
+            time</span
+          >
         </div>
       </div>
     </div>
