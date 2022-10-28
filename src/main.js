@@ -22,7 +22,8 @@ const store = useUserStore(pinia);
 
 auth.onAuthStateChanged(function (user) {
   if (!user) {
-    router.push("/login");
+    store.isLoggedIn = false;
+    store.currentUser = null;
   } else {
     store.isLoggedIn = true;
     store.currentUser = auth.currentUser;
