@@ -21,6 +21,7 @@
     "firebase": "^9.13.0",
     "firebase-tools": "^11.15.0",
     "pinia": "^2.0.23",
+    "vite-plugin-vsharp": "^1.1.5",
     "vue": "^3.2.38",
     "vue-router": "^4.1.6"
   },
