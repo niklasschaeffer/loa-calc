@@ -6,7 +6,7 @@ import RegisterView from "../views/RegisterView.vue";
 import LoginView from "../views/LoginView.vue";
 import HomeView from "../views/HomeView.vue";
 import PageNotFoundView from "../views/PageNotFoundView.vue";
-import { useUserStore } from "../stores/user";
+import { auth } from "@/firebase/firebase";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +20,7 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+      meta: { requiresAuth: false },
     },
     {
       path: "/share",
@@ -43,35 +44,35 @@ const router = createRouter({
       path: "/register",
       name: "register",
       component: RegisterView,
+      meta: { hideforAuth: true },
     },
     {
       path: "/login",
       name: "login",
       component: LoginView,
+      meta: { hideforAuth: true },
     },
   ],
 });
 
-router.beforeEach((to) => {
-  const store = useUserStore();
-  if (to.meta.requiresAuth && !store.isLoggedIn) {
-    return {
-      path: "/login",
-      query: { redirect: to.fullPath },
-    };
-  }
-  if (to.name == "login" && store.isLoggedIn) {
-    return {
-      path: "/",
-      query: { redirect: to.fullPath },
-    };
-  }
-  if (to.name == "register" && store.isLoggedIn) {
-    return {
-      path: "/",
-      query: { redirect: to.fullPath },
-    };
-  }
+router.beforeEach((to, from, next) => {
+  auth.onAuthStateChanged(function (user) {
+    if (to.matched.some((record) => record.meta.requiresAuth)) {
+      if (!user) {
+        next({ path: "/login" });
+      } else {
+        next();
+      }
+    } else if (to.matched.some((record) => record.meta.hideForAuth)) {
+      if (user) {
+        next({ path: "/" });
+      } else {
+        next();
+      }
+    } else {
+      next();
+    }
+  });
 });
 
 export default router;
