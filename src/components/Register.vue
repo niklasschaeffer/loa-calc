@@ -1,6 +1,9 @@
 <script>
 import { auth } from "@/firebase/firebase";
-import { createUserWithEmailAndPassword } from "@firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+} from "@firebase/auth";
 import { router } from "@/router/index";
 
 export default {
@@ -23,7 +26,9 @@ export default {
         this.credentials.password
       )
         .then(() => {
-          router.push("/");
+          sendEmailVerification(auth.currentUser).then(() => {
+            router.push("/");
+          });
         })
         .catch((error) => {
           this.error = error.message;
