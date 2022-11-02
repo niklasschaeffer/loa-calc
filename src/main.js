@@ -5,6 +5,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faInfo } from "@fortawesome/free-solid-svg-icons";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { auth } from "@/firebase/firebase";
 
 import App from "./App.vue";
@@ -16,6 +17,7 @@ import "./assets/main.css";
 
 library.add(faGithub);
 library.add(faInfo);
+library.add(faGoogle);
 
 const app = createApp(App);
 

@@ -1,6 +1,7 @@
 <script>
 import { auth } from "@/firebase/firebase";
 import { useUserStore } from "@/stores/user";
+import { router } from "@/router/index";
 
 export default {
   data() {
@@ -20,6 +21,7 @@ export default {
         store.isLoggedIn = false;
         store.currentUser = "";
       }
+      router.push("/login");
     },
   },
 };

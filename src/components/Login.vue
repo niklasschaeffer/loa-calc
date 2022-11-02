@@ -1,10 +1,50 @@
+<script>
+import {
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
+import { auth } from "@/firebase/firebase";
+import { router } from "@/router/index";
+import { useUserStore } from "@/stores/user";
+
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  setup() {
+    const store = useUserStore();
+    if (store.isLoggedIn) {
+      router.push("/");
+    }
+  },
+  methods: {
+    login() {
+      signInWithEmailAndPassword(auth, this.email, this.password).then(() => {
+        router.push("/");
+      });
+    },
+    loginWithGoogle() {
+      const provider = new GoogleAuthProvider();
+
+      signInWithPopup(auth, provider).then(() => {
+        router.push("/");
+      });
+    },
+  },
+};
+</script>
+
 <template>
-  <form @submit.prevent="login">
-    <div class="card bg-dark">
-      <div class="card-header text-center">
-        <h2 class="text-light mb-0">Log in</h2>
-      </div>
-      <div class="card-body">
+  <div class="card bg-dark">
+    <div class="card-header text-center">
+      <h2 class="text-light mb-0">Log in</h2>
+    </div>
+    <div class="card-body">
+      <form @submit.prevent="login">
         <div class="form-group">
           <div class="row">
             <div class="col-12">
@@ -35,36 +75,17 @@
             <input type="submit" class="btn btn-success" value="Login" />
           </div>
         </div>
-      </div>
+      </form>
     </div>
-  </form>
+    <div class="card-footer">
+      <form @submit.prevent="loginWithGoogle">
+        <div class="col d-grid gap-2">
+          <button type="submit" class="btn btn-danger">
+            <font-awesome-icon icon="fa-brands fa-google"></font-awesome-icon>
+            Signin using Google
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 </template>
-
-<script>
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/firebase/firebase";
-import { router } from "@/router/index";
-import { useUserStore } from "@/stores/user";
-
-export default {
-  data() {
-    return {
-      email: "",
-      password: "",
-    };
-  },
-  setup() {
-    const store = useUserStore();
-    if (store.isLoggedIn) {
-      router.push("/");
-    }
-  },
-  methods: {
-    login() {
-      signInWithEmailAndPassword(auth, this.email, this.password).then(() => {
-        router.push("/");
-      });
-    },
-  },
-};
-</script>
