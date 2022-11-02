@@ -1,15 +1,102 @@
 <script>
 import EngraveTableAccessoires from "./engrave/EngraveTableAccessoires.vue";
 import EngraveTableBooks from "./engrave/EngraveTableBooks.vue";
+import EngraveTableEngravings from "./engrave/EngraveTableEngravings.vue";
 
 export default {
   data() {
     return {
       values_accessoires: [0, 1, 2, 3, 4, 5],
       values_books: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+      engravings: [
+        "",
+        "Adrenaline",
+        "All-Out Attack",
+        "Ambush Master",
+        "Awakening",
+        "Barricade",
+        "Broken Bone",
+        "Contender",
+        "Crisis Evasion",
+        "Crushing Fist",
+        "Disrespect",
+        "Divine Protection",
+        "Drops of Ether",
+        "Emergency Rescue",
+        "Enhanced Shield",
+        "Ether Predator",
+        "Expert",
+        "Explosive Expert",
+        "Fortitude",
+        "Heavy Armor",
+        "Hit Master",
+        "Keen Blunt Weapon",
+        "Lightning Fury",
+        "Magick Stream",
+        "Mass Increase",
+        "Master Brawler",
+        "Master of Escape",
+        "Master's Tenacity",
+        "Max MP Increase",
+        "MP Efficiency Increase",
+        "Necromancy",
+        "Precise Dagger",
+        "Preemptive Strike",
+        "Propulsion",
+        "Raid Captain",
+        "Shield Piercing",
+        "Sight Focus",
+        "Spirit Absorption",
+        "Stabilized Status",
+        "Strong Will",
+        "Super Charge",
+        "Vital Point Hit",
+        "Remaining Energy",
+        "Surge",
+        "Demonic Impulse",
+        "Perfect Suppression",
+        "Barrage Enhancement",
+        "Firepower Enhancement",
+        "Enhanced Weapon",
+        "Pistoleer",
+        "Peacemaker",
+        "Time to Hunt",
+        "Arthetinean Skill",
+        "Evolutionary Legacy",
+        "Death Strike",
+        "Loyal Companion",
+        "Empress's Grace",
+        "Order of the Emperor",
+        "Desperate Salvation",
+        "True Courage",
+        "Igniter",
+        "Reflux",
+        "Control",
+        "Pinnacle",
+        "Shock Training",
+        "Ultimate Skill: Taijutsu",
+        "Energy Overflow",
+        "Robust Spirit",
+        "Deathblow",
+        "Esoteric Flurry",
+        "Esoteric Skill Enhancement",
+        "First Intention",
+        "Berserker's Technique",
+        "Mayhem",
+        "Gravity Training",
+        "Rage Hammer",
+        "Combat Readiness",
+        "Lone Knight",
+        "Blessed Aura",
+        "Judgment",
+      ],
     };
   },
-  components: { EngraveTableAccessoires, EngraveTableBooks },
+  components: {
+    EngraveTableAccessoires,
+    EngraveTableBooks,
+    EngraveTableEngravings,
+  },
 };
 </script>
 <template>
@@ -27,15 +114,12 @@ export default {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Engraving Name</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+        <EngraveTableEngravings
+          :name="'Engraving'"
+          :internal_name="'engraving'"
+          :possible_values="values_accessoires"
+          :engravings="engravings"
+        />
         <EngraveTableAccessoires
           :name="'Stone'"
           :internal_name="'stone'"
