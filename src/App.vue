@@ -38,6 +38,14 @@ export default {
         <li class="nav-item">
           <RouterLink class="nav-link text-light" to="/marie">Marie</RouterLink>
         </li>
+        <li class="nav-item">
+          <RouterLink
+            class="nav-link text-light"
+            to="/engrave"
+            v-if="this.store.isLoggedIn == true && this.enabled == true"
+            >Engraving</RouterLink
+          >
+        </li>
         <li
           class="nav-item"
           v-if="this.store.isLoggedIn == true && this.enabled == true"

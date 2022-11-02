@@ -6,6 +6,7 @@ import RegisterView from "../views/RegisterView.vue";
 import LoginView from "../views/LoginView.vue";
 import HomeView from "../views/HomeView.vue";
 import PageNotFoundView from "../views/PageNotFoundView.vue";
+import EngraveView from "../views/EngraveView.vue";
 import { auth } from "@/firebase/firebase";
 
 const router = createRouter({
@@ -39,6 +40,12 @@ const router = createRouter({
       path: "/rapport",
       name: "rapport",
       component: RapportView,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: "/engrave",
+      name: "engrave",
+      component: EngraveView,
       meta: { requiresAuth: true },
     },
     {

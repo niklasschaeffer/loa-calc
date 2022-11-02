@@ -24,7 +24,18 @@ export default {
     <button class="btn btn-success btn-mobile" @click="redirect('/marie')">
       Marie Calculator
     </button>
-    <button class="btn btn-success btn-mobile" v-if="this.enabled == true">
+    <button
+      class="btn btn-success btn-mobile"
+      v-if="this.enabled == true"
+      @click="redirect('/engrave')"
+    >
+      Engraving Calculator
+    </button>
+    <button
+      class="btn btn-success btn-mobile"
+      v-if="this.enabled == true"
+      @click="redirect('/rapport')"
+    >
       Rapport Calculator
     </button>
   </div>
