@@ -6,6 +6,20 @@ export default {
       inputCrystals: 0,
       inputCurrentGoldToCrystals: 0,
       result: null,
+      baseUrl: "https://www.lostarkmarket.online/api/export-market-live/",
+      server: "Europe%20Central",
+      params: {
+        params: {
+          categories: "Currency Exchange",
+        },
+        withCredentials: false,
+        mode: "no-cors",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+        credentials: "same-origin",
+      },
     };
   },
   mounted() {
@@ -13,29 +27,13 @@ export default {
   },
   methods: {
     getCurrentCrystalPrice() {
-      this.axios
-        .get(
-          "https://www.lostarkmarket.online/api/export-market-live/Europe%20Central",
-          {
-            params: {
-              categories: "Currency Exchange",
-            },
-            withCredentials: false,
-            mode: "no-cors",
-            headers: {
-              "Access-Control-Allow-Origin": "*",
-              "Content-Type": "application/json",
-            },
-            credentials: "same-origin",
+      this.axios.get(this.baseUrl + this.server, this.params).then((result) => {
+        result.data.forEach((item) => {
+          if (item.id == "blue-crystal-0") {
+            this.inputCurrentGoldToCrystals = item.avgPrice * 95;
           }
-        )
-        .then((result) => {
-          result.data.forEach((item) => {
-            if (item.id == "blue-crystal-0") {
-              this.inputCurrentGoldToCrystals = item.avgPrice * 95;
-            }
-          });
         });
+      });
     },
     calculate() {
       const result =
