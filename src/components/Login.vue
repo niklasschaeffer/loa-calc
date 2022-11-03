@@ -13,6 +13,7 @@ export default {
     return {
       email: "",
       password: "",
+      error: "",
     };
   },
   setup() {
@@ -23,9 +24,13 @@ export default {
   },
   methods: {
     login() {
-      signInWithEmailAndPassword(auth, this.email, this.password).then(() => {
-        router.push("/");
-      });
+      signInWithEmailAndPassword(auth, this.email, this.password)
+        .then(() => {
+          router.push("/");
+        })
+        .catch((error) => {
+          this.error = error.message;
+        });
     },
     loginWithGoogle() {
       const provider = new GoogleAuthProvider();
@@ -44,6 +49,9 @@ export default {
       <h2 class="text-light mb-0">Log in</h2>
     </div>
     <div class="card-body">
+      <div v-if="this.error" class="alert alert-danger">
+        {{ this.error }}
+      </div>
       <form @submit.prevent="login">
         <div class="form-group">
           <div class="row">
