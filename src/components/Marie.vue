@@ -8,6 +8,21 @@ export default {
       result: null,
     };
   },
+  mounted() {
+    this.axios
+      .get(
+        "https://www.lostarkmarket.online/api/export-market-live/Europe%20Central",
+        {
+          params: {
+            categories: "Enhancement Material,Currency Exchange",
+          },
+          withCredentials: false,
+        }
+      )
+      .then((result) => {
+        this.inputCurrentGoldToCrystals = result.data[1].avgPrice * 90;
+      });
+  },
   methods: {
     calculate() {
       const result =
@@ -24,7 +39,10 @@ export default {
   <div>
     <h1>Marie Shop Calculator</h1>
     <br />
-    <h3>Inputs</h3>
+    <h3>
+      Inputs (Crystal Price from
+      <a href="https://www.lostarkmarket.online/">LostArk Market</a>)
+    </h3>
     <div class="form-group">
       <div class="row">
         <div class="col">

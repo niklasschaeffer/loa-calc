@@ -7,6 +7,8 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faInfo } from "@fortawesome/free-solid-svg-icons";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { auth } from "@/firebase/firebase";
+import axios from "axios";
+import VueAxios from "vue-axios";
 
 import App from "./App.vue";
 import router from "./router";
@@ -34,8 +36,12 @@ auth.onAuthStateChanged(function (user) {
   }
 });
 
+axios.defaults.headers.post["Content-Type"] =
+  "application/x-www-form-urlencoded";
+
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(pinia);
 app.use(router);
+app.use(VueAxios, axios);
 
 app.mount("#app");
