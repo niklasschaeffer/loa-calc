@@ -17,6 +17,12 @@ export default {
             categories: "Enhancement Material,Currency Exchange",
           },
           withCredentials: false,
+          mode: "no-cors",
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+          },
+          credentials: "same-origin",
         }
       )
       .then((result) => {
