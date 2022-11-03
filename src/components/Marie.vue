@@ -116,6 +116,7 @@ export default {
       </div>
     </div>
     <br />
+    <!--
     <table class="table table-dark table-striped table-condensed">
       <thead>
         <tr>
@@ -128,6 +129,7 @@ export default {
         </tr>
       </tbody>
     </table>
+    -->
   </div>
 </template>
 
