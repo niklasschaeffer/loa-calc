@@ -9,31 +9,38 @@ export default {
     };
   },
   mounted() {
-    this.axios
-      .get(
-        "https://www.lostarkmarket.online/api/export-market-live/Europe%20Central",
-        {
-          params: {
-            categories: "Enhancement Material,Currency Exchange",
-          },
-          withCredentials: false,
-          mode: "no-cors",
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/json",
-          },
-          credentials: "same-origin",
-        }
-      )
-      .then((result) => {
-        this.inputCurrentGoldToCrystals = result.data[1].avgPrice * 90;
-      });
+    this.getCurrentCrystalPrice();
   },
   methods: {
+    getCurrentCrystalPrice() {
+      this.axios
+        .get(
+          "https://www.lostarkmarket.online/api/export-market-live/Europe%20Central",
+          {
+            params: {
+              categories: "Currency Exchange",
+            },
+            withCredentials: false,
+            mode: "no-cors",
+            headers: {
+              "Access-Control-Allow-Origin": "*",
+              "Content-Type": "application/json",
+            },
+            credentials: "same-origin",
+          }
+        )
+        .then((result) => {
+          result.data.forEach((item) => {
+            if (item.id == "blue-crystal-0") {
+              this.inputCurrentGoldToCrystals = item.avgPrice * 95;
+            }
+          });
+        });
+    },
     calculate() {
       const result =
         this.inputMarketValue -
-        (this.inputCurrentGoldToCrystals / 90) * this.inputCrystals;
+        (this.inputCurrentGoldToCrystals / 95) * this.inputCrystals;
 
       this.result = result.toFixed();
     },
@@ -46,8 +53,11 @@ export default {
     <h1>Marie Shop Calculator</h1>
     <br />
     <h3>
-      Inputs (Crystal Price from
-      <a href="https://www.lostarkmarket.online/">LostArk Market</a>)
+      Inputs
+      <span style="font-size: 14px"
+        >(Crystal Price from
+        <a href="https://www.lostarkmarket.online/">LostArk Market</a>)
+      </span>
     </h3>
     <div class="form-group">
       <div class="row">
@@ -106,6 +116,18 @@ export default {
       </div>
     </div>
     <br />
+    <table class="table table-dark table-striped table-condensed">
+      <thead>
+        <tr>
+          <th>Test</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
