@@ -2,8 +2,8 @@
 export default {
   data() {
     return {
-      inputMarketValue: 0,
-      inputBid: 0,
+      marketValue: 0,
+      currentBid: 0,
       equalShare4: 0,
       equalShare8: 0,
       maxBid: 0,
@@ -11,17 +11,16 @@ export default {
     };
   },
   methods: {
-    calculateNumbers() {
-      const equalShare8 = this.inputMarketValue * 0.95 * (1 - 1 / 8);
-      const equalShare4 = this.inputMarketValue * 0.95 * (1 - 1 / 4);
+    calculate() {
+      const equalShare8 = this.marketValue * 0.95 * (1 - 1 / 8);
+      const equalShare4 = this.marketValue * 0.95 * (1 - 1 / 4);
 
       this.equalShare4 = equalShare4.toFixed();
       this.equalShare8 = equalShare8.toFixed();
 
-      const maxBid = this.inputMarketValue * 0.95;
-      const profit = this.inputMarketValue * 0.95 - this.inputBid;
-
+      const maxBid = this.marketValue * 0.95;
       this.maxBid = maxBid.toFixed();
+      const profit = this.marketValue * 0.95 - this.currentBid;
       this.profit = profit.toFixed();
     },
   },
@@ -33,36 +32,30 @@ export default {
   <br />
   <h2>Inputs</h2>
 
-  <div class="form-group">
-    <div class="row">
-      <div class="col">
-        <label for="inputBid">Current Bid</label>
-        <input
-          type="number"
-          class="form-control"
-          id="inputBid"
-          v-model="inputBid"
-        />
-      </div>
-      <div class="col">
-        <label for="inputMarketValue">Market Value</label>
-        <input
-          type="number"
-          class="form-control"
-          id="inputMarketValue"
-          v-model="inputMarketValue"
-        />
-      </div>
-    </div>
-    <br />
-    <div class="row align-items-center">
-      <div class="col">
-        <button type="button" class="btn btn-success" @click="calculateNumbers">
-          Calculate
-        </button>
+  <form @change="calculate" @keyup="calculate">
+    <div class="form-group">
+      <div class="row">
+        <div class="col">
+          <label for="currentBid">Current Bid</label>
+          <input
+            type="number"
+            class="form-control"
+            id="currentBid"
+            v-model="currentBid"
+          />
+        </div>
+        <div class="col">
+          <label for="marketValue">Market Value</label>
+          <input
+            type="number"
+            class="form-control"
+            id="marketValue"
+            v-model="marketValue"
+          />
+        </div>
       </div>
     </div>
-  </div>
+  </form>
 
   <br />
 
