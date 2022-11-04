@@ -59,17 +59,16 @@ export default {
     <div>
       <h1>Marie Shop Calculator</h1>
       <br />
-      <h3>
-        Inputs
-        <span style="font-size: 14px"
-          >(Crystal Price from
-          <a href="https://www.lostarkmarket.online/">LostArk Market</a>)
-        </span>
-      </h3>
+      <span style="font-size: 14px"
+        >(Crystal Price from
+        <a href="https://www.lostarkmarket.online/">LostArk Market</a>)
+      </span>
       <div class="form-group">
         <div class="row">
           <div class="col">
-            <label for="inputMarketValue">Market Value</label>
+            <label class="form-label" for="inputMarketValue"
+              >Market Value</label
+            >
             <input
               v-model="inputMarketValue"
               type="number"
@@ -78,7 +77,7 @@ export default {
             />
           </div>
           <div class="col">
-            <label for="inputMarketValue">Crystals</label>
+            <label class="form-label" for="inputMarketValue">Crystals</label>
             <input
               v-model="inputCrystals"
               type="number"
@@ -87,7 +86,9 @@ export default {
             />
           </div>
           <div class="col">
-            <label for="inputCurrentGoldToCrystals">Crystal Price</label>
+            <label class="form-label" for="inputCurrentGoldToCrystals"
+              >Crystal Price</label
+            >
             <input
               v-model="inputCurrentGoldToCrystals"
               type="number"

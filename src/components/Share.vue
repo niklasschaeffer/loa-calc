@@ -30,13 +30,11 @@ export default {
 <template>
   <h1>Market Value & Equal Share Calculator</h1>
   <br />
-  <h2>Inputs</h2>
-
   <form @change="calculate" @keyup="calculate">
     <div class="form-group">
       <div class="row">
         <div class="col">
-          <label for="currentBid">Current Bid</label>
+          <label class="form-label" for="currentBid">Current Bid</label>
           <input
             type="number"
             class="form-control"
@@ -45,7 +43,7 @@ export default {
           />
         </div>
         <div class="col">
-          <label for="marketValue">Market Value</label>
+          <label class="form-label" for="marketValue">Market Value</label>
           <input
             type="number"
             class="form-control"

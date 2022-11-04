@@ -51,7 +51,7 @@ export default {
         <div class="form-group">
           <div class="row">
             <div class="col">
-              <label>Username</label>
+              <label class="form-label" for="username">Username</label>
               <input
                 type="text"
                 placeholder="Username"
@@ -63,7 +63,7 @@ export default {
           </div>
           <div class="row">
             <div class="col pt-3">
-              <label>Email</label>
+              <label class="form-label" for="email">Email</label>
               <input
                 type="email"
                 placeholder="Email"
@@ -75,7 +75,7 @@ export default {
           </div>
           <div class="row">
             <div class="col pt-3">
-              <label>Password</label>
+              <label class="form-label" for="password">Password</label>
               <input
                 type="password"
                 placeholder="Password"
