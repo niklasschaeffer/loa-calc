@@ -1,4 +1,5 @@
 <script>
+import { useMarket } from "@/stores/market";
 export default {
   data() {
     return {
@@ -23,14 +24,21 @@ export default {
     };
   },
   mounted() {
-    this.getCurrentCrystalPrice();
+    const store = useMarket();
+    if (store.blueCrystalPrice > 0) {
+      this.inputCurrentGoldToCrystals = store.blueCrystalPrice;
+    } else {
+      this.getCurrentCrystalPrice();
+    }
   },
   methods: {
     getCurrentCrystalPrice() {
+      const store = useMarket();
       this.axios.get(this.baseUrl + this.server, this.params).then((result) => {
         result.data.forEach((item) => {
           if (item.id == "blue-crystal-0") {
-            this.inputCurrentGoldToCrystals = item.avgPrice * 95;
+            this.inputCurrentGoldToCrystals = Math.round(item.avgPrice * 95);
+            store.blueCrystalPrice = Math.round(item.avgPrice * 95);
           }
         });
       });
