@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-      accumulatedValue: 0,
+      selected: [0, 0, 0, 0, 0, 0],
     };
   },
   props: {
@@ -24,11 +24,15 @@ export default {
 <template>
   <tr>
     <td>{{ this.$props.name }}</td>
-    <td v-for="value in this.$props.possible_values" v-bind:key="value">
+    <td
+      v-for="(index, value) in this.$props.possible_values"
+      v-bind:key="value"
+    >
       <select
         class="form-control"
         v-bind:name="this.$props.internal_name + '-engraving-' + value + ''"
         v-bind:id="this.$props.internal_name + '-engraving-' + value + ''"
+        v-model="this.selected[index]"
       >
         <option
           v-for="value in this.$props.engravings"

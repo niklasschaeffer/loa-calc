@@ -15,6 +15,9 @@ export default {
     possible_values: {
       type: Array,
     },
+    possible_values_stone: {
+      type: Array,
+    },
   },
 };
 </script>
@@ -32,7 +35,7 @@ export default {
         v-model="this.selected[index]"
       >
         <option
-          v-for="value in possible_values"
+          v-for="value in this.$props.possible_values_stone"
           v-bind:key="value"
           v-bind:value="value"
         >

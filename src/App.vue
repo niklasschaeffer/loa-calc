@@ -41,10 +41,7 @@ export default {
           <RouterLink class="nav-link text-light" to="/marie">Marie</RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink
-            class="nav-link text-light"
-            to="/engrave"
-            v-if="this.store.isLoggedIn == true && this.enabled == true"
+          <RouterLink class="nav-link text-light" to="/engrave"
             >Engraving</RouterLink
           >
         </li>
@@ -75,6 +72,14 @@ export default {
           >
         </li>
         <li class="nav-item">
+          <!--
+          <img
+            class="img-fluid rounded-pill me-2 action-link"
+            style="max-height: 50px; max-width: 50px"
+            v-if="this.store.currentUser"
+            v-bind:src="this.store.currentUser.photoURL"
+          />
+          -->
           <a
             class="nav-link text-light"
             href="#"
