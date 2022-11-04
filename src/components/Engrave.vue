@@ -123,7 +123,11 @@ export default {
 </script>
 <template>
   <div>
-    <form @change="accumulateValues" @keyup="accumulateValues">
+    <form
+      @change="accumulateValues"
+      @keyup="accumulateValues"
+      class="table-responsive"
+    >
       <table class="table table-dark table-bordered table-condensed">
         <thead>
           <tr>
@@ -195,39 +199,11 @@ export default {
             <td>Values</td>
             <td
               align="center"
-              v-bind:value="this.accumulatedValues.accessoires[0]"
+              v-for="index in values_accessoires"
+              v-bind:value="this.accumulatedValues.accessoires[index]"
+              v-bind:key="this.accumulatedValues.accessoires[index]"
             >
-              {{ this.accumulatedValues.accessoires[0] }}
-            </td>
-            <td
-              align="center"
-              v-bind:value="this.accumulatedValues.accessoires[1]"
-            >
-              {{ this.accumulatedValues.accessoires[1] }}
-            </td>
-            <td
-              align="center"
-              v-bind:value="this.accumulatedValues.accessoires[2]"
-            >
-              {{ this.accumulatedValues.accessoires[2] }}
-            </td>
-            <td
-              align="center"
-              v-bind:value="this.accumulatedValues.accessoires[3]"
-            >
-              {{ this.accumulatedValues.accessoires[3] }}
-            </td>
-            <td
-              align="center"
-              v-bind:value="this.accumulatedValues.accessoires[4]"
-            >
-              {{ this.accumulatedValues.accessoires[4] }}
-            </td>
-            <td
-              align="center"
-              v-bind:value="this.accumulatedValues.accessoires[5]"
-            >
-              {{ this.accumulatedValues.accessoires[5] }}
+              {{ this.accumulatedValues.accessoires[index] }}
             </td>
           </tr>
         </tbody>
