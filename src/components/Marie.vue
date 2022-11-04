@@ -57,12 +57,14 @@ export default {
 <template>
   <form @change="calculate" @keyup="calculate">
     <div>
-      <h1>Marie Shop Calculator</h1>
+      <h1>
+        Marie Shop Calculator
+        <span style="font-size: 12px"
+          >(Crystal Price from
+          <a href="https://www.lostarkmarket.online/">LostArk Market</a>)
+        </span>
+      </h1>
       <br />
-      <span style="font-size: 14px"
-        >(Crystal Price from
-        <a href="https://www.lostarkmarket.online/">LostArk Market</a>)
-      </span>
       <div class="form-group">
         <div class="row">
           <div class="col">
