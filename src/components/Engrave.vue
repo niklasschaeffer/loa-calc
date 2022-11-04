@@ -107,59 +107,16 @@ export default {
   },
   methods: {
     accumulateValues() {
-      this.accumulatedValues.accessoires[0] =
-        this.$refs.earring_1_details.$data.selected[0] +
-        this.$refs.earring_2_details.$data.selected[0] +
-        this.$refs.ring_1_details.$data.selected[0] +
-        this.$refs.necklace_details.$data.selected[0] +
-        this.$refs.ring_2_details.$data.selected[0] +
-        this.$refs.stone_details.$data.selected[0] +
-        this.$refs.books_details.$data.selected[0];
-
-      this.accumulatedValues.accessoires[1] =
-        this.$refs.earring_1_details.$data.selected[1] +
-        this.$refs.earring_2_details.$data.selected[1] +
-        this.$refs.ring_1_details.$data.selected[1] +
-        this.$refs.necklace_details.$data.selected[1] +
-        this.$refs.ring_2_details.$data.selected[1] +
-        this.$refs.stone_details.$data.selected[1] +
-        this.$refs.books_details.$data.selected[1];
-
-      this.accumulatedValues.accessoires[2] =
-        this.$refs.earring_1_details.$data.selected[2] +
-        this.$refs.earring_2_details.$data.selected[2] +
-        this.$refs.ring_1_details.$data.selected[2] +
-        this.$refs.necklace_details.$data.selected[2] +
-        this.$refs.ring_2_details.$data.selected[2] +
-        this.$refs.stone_details.$data.selected[2] +
-        this.$refs.books_details.$data.selected[2];
-
-      this.accumulatedValues.accessoires[3] =
-        this.$refs.earring_1_details.$data.selected[3] +
-        this.$refs.earring_2_details.$data.selected[3] +
-        this.$refs.ring_1_details.$data.selected[3] +
-        this.$refs.necklace_details.$data.selected[3] +
-        this.$refs.ring_2_details.$data.selected[3] +
-        this.$refs.stone_details.$data.selected[3] +
-        this.$refs.books_details.$data.selected[3];
-
-      this.accumulatedValues.accessoires[4] =
-        this.$refs.earring_1_details.$data.selected[4] +
-        this.$refs.earring_2_details.$data.selected[4] +
-        this.$refs.ring_1_details.$data.selected[4] +
-        this.$refs.necklace_details.$data.selected[4] +
-        this.$refs.ring_2_details.$data.selected[4] +
-        this.$refs.stone_details.$data.selected[4] +
-        this.$refs.books_details.$data.selected[4];
-
-      this.accumulatedValues.accessoires[5] =
-        this.$refs.earring_1_details.$data.selected[5] +
-        this.$refs.earring_2_details.$data.selected[5] +
-        this.$refs.ring_1_details.$data.selected[5] +
-        this.$refs.necklace_details.$data.selected[5] +
-        this.$refs.ring_2_details.$data.selected[5] +
-        this.$refs.stone_details.$data.selected[5] +
-        this.$refs.books_details.$data.selected[5];
+      for (let i = 0; i < 5; i++) {
+        this.accumulatedValues.accessoires[i] =
+          this.$refs.earring_1_details.$data.selected[i] +
+          this.$refs.earring_2_details.$data.selected[i] +
+          this.$refs.ring_1_details.$data.selected[i] +
+          this.$refs.necklace_details.$data.selected[i] +
+          this.$refs.ring_2_details.$data.selected[i] +
+          this.$refs.stone_details.$data.selected[i] +
+          this.$refs.books_details.$data.selected[i];
+      }
     },
   },
 };
