@@ -107,7 +107,7 @@ export default {
   },
   methods: {
     accumulateValues() {
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 6; i++) {
         this.accumulatedValues.accessoires[i] =
           this.$refs.earring_1_details.$data.selected[i] +
           this.$refs.earring_2_details.$data.selected[i] +
