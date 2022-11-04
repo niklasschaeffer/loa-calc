@@ -65,7 +65,7 @@ export default {
                 v-model="email"
               />
             </div>
-            <div class="col-12">
+            <div class="col-12 pt-3">
               <label class="form-label" for="password">Password</label>
               <input
                 type="password"
