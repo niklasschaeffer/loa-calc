@@ -96,4 +96,10 @@ export default {
       </form>
     </div>
   </div>
+  <RouterLink
+    to="/forgotPassword"
+    class="d-block text-center text-light"
+    style="margin-top: 10px"
+    >Forgot password?</RouterLink
+  >
 </template>
