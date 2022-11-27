@@ -12,8 +12,8 @@ export default {
   },
   methods: {
     calculate() {
-      const equalShare8 = this.marketValue * 0.95 * (1 - 1 / 8);
-      const equalShare4 = this.marketValue * 0.95 * (1 - 1 / 4);
+      const equalShare8 = this.marketValue * 0.83125;
+      const equalShare4 = this.marketValue * 0.7125;
 
       this.equalShare4 = equalShare4.toFixed();
       this.equalShare8 = equalShare8.toFixed();
