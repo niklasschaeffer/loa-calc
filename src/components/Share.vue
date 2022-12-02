@@ -9,6 +9,8 @@ export default {
       maxBid: 0,
       maxProfitBid8: 0,
       maxProfitBid4: 0,
+      shareGold4: 0,
+      shareGold8: 0,
       profit: 0,
     };
   },
@@ -17,11 +19,16 @@ export default {
       const equalShare8 = this.marketValue * 0.95 * (1 - 1 / 7);
       const maxProfitBid8 = this.marketValue * 0.75;
 
+      const shareGold4 = this.currentBid / 3;
+      const shareGold8 = this.currentBid / 7;
+
       const equalShare4 = this.marketValue * 0.95 * (1 - 1 / 4);
       const maxProfitBid4 = this.marketValue * 0.65;
 
       this.maxProfitBid4 = maxProfitBid4.toFixed();
       this.maxProfitBid8 = maxProfitBid8.toFixed();
+      this.shareGold4 = shareGold4.toFixed();
+      this.shareGold8 = shareGold8.toFixed();
 
       this.equalShare4 = equalShare4.toFixed();
       this.equalShare8 = equalShare8.toFixed();
@@ -76,6 +83,7 @@ export default {
         <th>Players</th>
         <th>Equal Bid</th>
         <th>Max Profit Bid</th>
+        <th>Share Gold</th>
       </tr>
     </thead>
     <tbody>
@@ -84,12 +92,14 @@ export default {
         <td>8</td>
         <td>{{ equalShare8 }}g</td>
         <td>{{ maxProfitBid8 }}g</td>
+        <td>{{ shareGold8 }}</td>
       </tr>
       <tr>
         <td>#</td>
         <td>4</td>
         <td>{{ equalShare4 }}g</td>
         <td>{{ maxProfitBid4 }}g</td>
+        <td>{{ shareGold4 }}</td>
       </tr>
     </tbody>
   </table>
