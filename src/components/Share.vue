@@ -7,13 +7,21 @@ export default {
       equalShare4: 0,
       equalShare8: 0,
       maxBid: 0,
+      maxProfitBid8: 0,
+      maxProfitBid4: 0,
       profit: 0,
     };
   },
   methods: {
     calculate() {
-      const equalShare8 = this.marketValue * 0.83125;
-      const equalShare4 = this.marketValue * 0.7125;
+      const equalShare8 = this.marketValue * 0.95 * (1 - 1 / 7);
+      const maxProfitBid8 = this.marketValue * 0.75;
+
+      const equalShare4 = this.marketValue * 0.95 * (1 - 1 / 4);
+      const maxProfitBid4 = this.marketValue * 0.65;
+
+      this.maxProfitBid4 = maxProfitBid4.toFixed();
+      this.maxProfitBid8 = maxProfitBid8.toFixed();
 
       this.equalShare4 = equalShare4.toFixed();
       this.equalShare8 = equalShare8.toFixed();
@@ -59,47 +67,29 @@ export default {
 
   <h1>Results</h1>
   <br />
-  <h3>Equal Share</h3>
+  <h3>Equal Share || Max Bid ( {{ maxBid }}g ) || Profit ( {{ profit }}g )</h3>
   <br />
   <table class="table table-dark table-striped table-condensed">
     <thead>
       <tr>
         <th>#</th>
         <th>Players</th>
-        <th>Gold</th>
+        <th>Equal Bid</th>
+        <th>Max Profit Bid</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>#</td>
         <td>8</td>
-        <td>{{ equalShare8 }}</td>
+        <td>{{ equalShare8 }}g</td>
+        <td>{{ maxProfitBid8 }}g</td>
       </tr>
       <tr>
         <td>#</td>
         <td>4</td>
-        <td>{{ equalShare4 }}</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <br />
-
-  <h3>Bidding</h3>
-  <br />
-  <table class="table table-dark table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Maximum Bid</th>
-        <th>Market Profit</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>#</td>
-        <td>{{ maxBid }}</td>
-        <td>{{ profit }}</td>
+        <td>{{ equalShare4 }}g</td>
+        <td>{{ maxProfitBid4 }}g</td>
       </tr>
     </tbody>
   </table>
