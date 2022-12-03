@@ -43,7 +43,7 @@ export default {
 </script>
 
 <template>
-  <h1>Market Value & Equal Share Calculator</h1>
+  <h1>Auction Calculator</h1>
   <br />
   <form @change="calculate" @keyup="calculate">
     <div class="form-group">

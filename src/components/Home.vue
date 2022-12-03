@@ -18,8 +18,8 @@ export default {
   <div class="text-center">
     <h1>Welcome to loa-calc.com</h1>
     <p>What do you want to do ?</p>
-    <button class="btn btn-success btn-mobile" @click="redirect('/share')">
-      Share Calculator
+    <button class="btn btn-success btn-mobile" @click="redirect('/auctions')">
+      Auctions Calculator
     </button>
     <button class="btn btn-success btn-mobile" @click="redirect('/marie')">
       Marie Calculator

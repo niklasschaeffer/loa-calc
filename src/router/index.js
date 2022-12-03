@@ -26,8 +26,8 @@ const router = createRouter({
       meta: { requiresAuth: false },
     },
     {
-      path: "/share",
-      name: "share",
+      path: "/auctions",
+      name: "auctions",
       component: ShareView,
       meta: { requiresAuth: true },
     },

@@ -35,7 +35,9 @@ export default {
           <RouterLink class="nav-link text-light" to="/">Home</RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link text-light" to="/share">Share</RouterLink>
+          <RouterLink class="nav-link text-light" to="/auctions"
+            >Auctions</RouterLink
+          >
         </li>
         <li class="nav-item">
           <RouterLink class="nav-link text-light" to="/marie">Marie</RouterLink>
