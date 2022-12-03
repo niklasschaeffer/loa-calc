@@ -22,7 +22,7 @@ export default {
       const shareGold4 = this.currentBid / 3;
       const shareGold8 = this.currentBid / 7;
 
-      const equalShare4 = this.marketValue * 0.95 * (1 - 1 / 4);
+      const equalShare4 = this.marketValue * 0.95 * (1 - 1 / 3);
       const maxProfitBid4 = this.marketValue * 0.65;
 
       this.maxProfitBid4 = maxProfitBid4.toFixed();
