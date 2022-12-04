@@ -20,7 +20,7 @@ export default {
     calculate() {
       const equalShare8 = this.marketValue * 0.95 * (1 - 1 / 8);
       const maxProfitBid8 = equalShare8 * 0.9 + 1;
-      const equalShareGold8 = equalShare4 / 7;
+      const equalShareGold8 = equalShare8 / 7;
 
       const shareGold4 = this.currentBid / 3;
       const shareGold8 = this.currentBid / 7;
