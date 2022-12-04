@@ -80,7 +80,7 @@ export default {
 
   <h1>Results</h1>
   <br />
-  <h3>Equal Share || Max Bid ( {{ maxBid }}g ) || Profit ( {{ profit }}g )</h3>
+  <h3>Max Bid ( {{ maxBid }}g ) || Profit ( {{ profit }}g )</h3>
   <br />
   <table class="table table-dark table-striped table-condensed">
     <thead>
