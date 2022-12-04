@@ -108,7 +108,7 @@ export default {
         <td>{{ maxProfitBid4 }}g</td>
         <td>{{ equalShare4 }}g</td>
         <td>{{ shareGold4 }}g</td>
-        <td>{{ equalShare4 }}</td>
+        <td>{{ equalShareGold4 }}</td>
       </tr>
     </tbody>
   </table>
