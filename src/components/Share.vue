@@ -3,7 +3,7 @@ export default {
   data() {
     return {
       marketValue: 0,
-      currentBid: 0,
+      currentBid: 50,
       equalShare4: 0,
       equalShare8: 0,
       minBid: 50,
@@ -82,7 +82,7 @@ export default {
   <h1>Results</h1>
   <br />
   <h3>
-    Min Bid ( {{ minBid }} ) || Max Bid ( {{ maxBid }}g ) || Profit (
+    Min Bid ( {{ minBid }}g ) || Max Bid ( {{ maxBid }}g ) || Profit (
     {{ profit }}g )
   </h3>
   <br />
