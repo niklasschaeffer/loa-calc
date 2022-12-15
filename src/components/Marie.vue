@@ -68,6 +68,26 @@ export default {
       <div class="form-group">
         <div class="row">
           <div class="col">
+            <label class="form-label" for="region">Region</label>
+            <select
+              v-model="server"
+              class="form-control"
+              name="region"
+              @change="getCurrentCrystalPrice"
+            >
+              <option value="Europe%20West">Europe West</option>
+              <option value="Europe%20Central" selected>Europe Central</option>
+              <option value="North%20America%20West">North America West</option>
+              <option value="North%20America%20East">North America East</option>
+              <option value="South%20America">South America</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
             <label class="form-label" for="inputMarketValue"
               >Market Value</label
             >
@@ -118,20 +138,7 @@ export default {
         </div>
       </div>
       <br />
-      <!--
-    <table class="table table-dark table-striped table-condensed">
-      <thead>
-        <tr>
-          <th>Test</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-    --></div>
+    </div>
   </form>
 </template>
 
