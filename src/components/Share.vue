@@ -144,6 +144,7 @@ export default {
       Max Profit Bid is 92% of the Equal Share Bid
     </li>
   </ul>
+  <br />
 </template>
 
 <style scoped></style>
