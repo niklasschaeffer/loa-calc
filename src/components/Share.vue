@@ -12,10 +12,14 @@ export default {
       maxProfitBid4: 0,
       equalShareGold4: 0,
       equalShareGold8: 0,
+      nextPossibleBid: 0,
       shareGold4: 0,
       shareGold8: 0,
       profit: 0,
     };
+  },
+  mounted() {
+    this.calculate();
   },
   methods: {
     calculate() {
@@ -44,6 +48,9 @@ export default {
       this.maxBid = maxBid.toFixed();
       const profit = this.marketValue * 0.95 - this.currentBid;
       this.profit = profit.toFixed();
+
+      const nextPossibleBid = this.currentBid * 1.1;
+      this.nextPossibleBid = nextPossibleBid.toFixed();
     },
   },
 };
@@ -75,16 +82,30 @@ export default {
         </div>
       </div>
     </div>
+    <br />
+    <div class="form-group">
+      <div class="row">
+        <div class="col">
+          <label class="form-label" for="nextPossibleBid"
+            >Next Possible Bid</label
+          >
+          <input
+            disabled
+            type="number"
+            class="disabled form-control"
+            id="nextPossibleBid"
+            v-model="nextPossibleBid"
+          />
+        </div>
+      </div>
+    </div>
   </form>
 
   <br />
 
   <h1>Results</h1>
   <br />
-  <h3>
-    Min Bid ( {{ minBid }}g ) || Max Bid ( {{ maxBid }}g ) || Profit (
-    {{ profit }}g )
-  </h3>
+  <h3>Max Bid ( {{ maxBid }}g ) || Profit ( {{ profit }}g )</h3>
   <br />
   <table class="table table-dark table-striped table-condensed">
     <thead>
@@ -116,6 +137,13 @@ export default {
       </tr>
     </tbody>
   </table>
+  <br />
+  <h3>Additional Information</h3>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      Max Profit Bid is 92% of the Equal Share Bid
+    </li>
+  </ul>
 </template>
 
 <style scoped></style>
