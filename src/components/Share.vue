@@ -57,94 +57,99 @@ export default {
 </script>
 
 <template>
-  <h1>Auction Calculator</h1>
-  <br />
-  <form @change="calculate" @keyup="calculate">
-    <div class="form-group">
-      <div class="row">
-        <div class="col">
-          <label class="form-label" for="currentBid">Current Bid</label>
-          <input
-            type="number"
-            class="form-control"
-            id="currentBid"
-            v-model="currentBid"
-          />
-        </div>
-        <div class="col">
-          <label class="form-label" for="marketValue">Market Value</label>
-          <input
-            type="number"
-            class="form-control"
-            id="marketValue"
-            v-model="marketValue"
-          />
-        </div>
-      </div>
+  <div class="card text-bg-dark">
+    <div class="card-header">
+      <h1>Auction Calculator</h1>
     </div>
-    <br />
-    <div class="form-group">
-      <div class="row">
-        <div class="col">
-          <label class="form-label" for="nextPossibleBid"
-            >Next Possible Bid</label
-          >
-          <input
-            disabled
-            type="number"
-            class="disabled form-control"
-            id="nextPossibleBid"
-            v-model="nextPossibleBid"
-          />
+    <div class="card-body">
+      <form @change="calculate" @keyup="calculate">
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <label class="form-label" for="currentBid">Current Bid</label>
+              <input
+                type="number"
+                class="form-control"
+                id="currentBid"
+                v-model="currentBid"
+              />
+            </div>
+            <div class="col">
+              <label class="form-label" for="marketValue">Market Value</label>
+              <input
+                type="number"
+                class="form-control"
+                id="marketValue"
+                v-model="marketValue"
+              />
+            </div>
+          </div>
         </div>
-      </div>
+        <br />
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+              <label class="form-label" for="nextPossibleBid"
+                >Next Possible Bid</label
+              >
+              <input
+                disabled
+                type="number"
+                class="disabled form-control"
+                id="nextPossibleBid"
+                v-model="nextPossibleBid"
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <br />
+
+      <h1>Results</h1>
+      <br />
+      <h3>Max Bid ( {{ maxBid }}g ) || Profit ( {{ profit }}g )</h3>
+      <br />
+      <table class="table table-dark table-striped table-condensed">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Players</th>
+            <th>Max Profit Bid</th>
+            <th>Equal Bid</th>
+            <th>Bid Share</th>
+            <th>Equal Share</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#</td>
+            <td>8</td>
+            <td>{{ maxProfitBid8 }}g</td>
+            <td>{{ equalShare8 }}g</td>
+            <td>{{ shareGold8 }}g</td>
+            <td>{{ equalShareGold8 }}g</td>
+          </tr>
+          <tr>
+            <td>#</td>
+            <td>4</td>
+            <td>{{ maxProfitBid4 }}g</td>
+            <td>{{ equalShare4 }}g</td>
+            <td>{{ shareGold4 }}g</td>
+            <td>{{ equalShareGold4 }}g</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <h3>Additional Information</h3>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          Max Profit Bid is 92% of the Equal Share Bid
+        </li>
+      </ul>
+      <br />
     </div>
-  </form>
-
-  <br />
-
-  <h1>Results</h1>
-  <br />
-  <h3>Max Bid ( {{ maxBid }}g ) || Profit ( {{ profit }}g )</h3>
-  <br />
-  <table class="table table-dark table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Players</th>
-        <th>Max Profit Bid</th>
-        <th>Equal Bid</th>
-        <th>Bid Share</th>
-        <th>Equal Share</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>#</td>
-        <td>8</td>
-        <td>{{ maxProfitBid8 }}g</td>
-        <td>{{ equalShare8 }}g</td>
-        <td>{{ shareGold8 }}g</td>
-        <td>{{ equalShareGold8 }}g</td>
-      </tr>
-      <tr>
-        <td>#</td>
-        <td>4</td>
-        <td>{{ maxProfitBid4 }}g</td>
-        <td>{{ equalShare4 }}g</td>
-        <td>{{ shareGold4 }}g</td>
-        <td>{{ equalShareGold4 }}g</td>
-      </tr>
-    </tbody>
-  </table>
-  <br />
-  <h3>Additional Information</h3>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      Max Profit Bid is 92% of the Equal Share Bid
-    </li>
-  </ul>
-  <br />
+  </div>
 </template>
 
 <style scoped></style>
